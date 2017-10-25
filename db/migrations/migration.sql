@@ -1,7 +1,7 @@
-
+DROP TABLE IF EXISTS tasks;
 CREATE TABLE IF NOT EXISTS tasks (
-    id BIGSERIAL PRIMARY KEY,
-    description VARCHAR(255)
-    priority VARCHAR(255)
-    status BOOLEAN
-    );
+id SERIAL PRIMARY KEY,
+description VARCHAR(255),
+priority VARCHAR(255),
+status BOOLEAN
+);

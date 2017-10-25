@@ -1,5 +1,5 @@
 return pgp({
-    database: [INSERT DATABASE HERE],
+    database: tasks,
     port: 5432,
     host: 'localhost'
 });
