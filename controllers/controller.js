@@ -4,9 +4,10 @@ const todoController = {};
 
 todoController.index = (req, res) => {
     console.log('controller index')
-    Todo.findAll() .then(tasks => {
+    Todo.findAll()
+        .then(tasks => {
         res.render('index', {
-            data: tasks,
+            tasks: tasks,
         });
 
         }) .catch(err => {
