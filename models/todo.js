@@ -30,14 +30,14 @@ todo.update = (tasks, id) => {
     priority = $2,
     state = $3
     WHERE id = $4
-    RETURNING * 
+    RETURNING *
     `, [todo.description, todo.priority, todo.status, id]);
 };
 
 todo.destory = (id) => {
     return db.none(`
     DELETE FROM tasks
-    WHERE id = $1 
+    WHERE id = $1
 `, [id]);
 };
 
