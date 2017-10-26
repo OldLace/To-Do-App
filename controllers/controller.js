@@ -3,11 +3,11 @@ const Todo = require('../models/todo');
 const todoController = {};
 
 todoController.index = (req, res) => {
+    console.log('controller index')
     Todo.findAll() .then(tasks => {
-        console.log(task)
-        res.render('tasks/tasks-index', {
+        res.render('index', {
             data: tasks,
-        })
+        });
 
         }) .catch(err => {
         console.log(err);

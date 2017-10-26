@@ -1,4 +1,4 @@
-INSERT INTO tasks (description, priority, status) VALUES
+INSERT INTO todos (description, priority, status) VALUES
 (
     'Complete homeworks',
     'High',

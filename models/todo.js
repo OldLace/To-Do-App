@@ -3,12 +3,14 @@ const db = require('../db/config');
 const todo = {};
 
 todo.findAll = () => {
-    return db.query('SELECT * FROM tasks');
+    console.log('Model Find All')
+    return db.query('SELECT * FROM todos');
+
 };
 
 todo.findById = (id) => {
     return db.oneOrNone(`
-        SELECT * FROM tasks
+        SELECT * FROM todos
         WHERE id = $1
     `, [id]);
 };
@@ -16,7 +18,7 @@ todo.findById = (id) => {
 todo.create = (todo) => {
     return db.one(
         `
-        INSERT INTO tasks
+        INSERT INTO todos
         (description, priority, status)
         VALUES ($1, $2, $3)
         RETURNING *
@@ -25,7 +27,7 @@ todo.create = (todo) => {
 
 todo.update = (tasks, id) => {
     return db.one(`
-    UPDATE tasks SET
+    UPDATE todos SET
     description = $1,
     priority = $2,
     state = $3
@@ -36,7 +38,7 @@ todo.update = (tasks, id) => {
 
 todo.destory = (id) => {
     return db.none(`
-    DELETE FROM tasks
+    DELETE FROM todos
     WHERE id = $1
 `, [id]);
 };
